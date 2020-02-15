@@ -16,7 +16,7 @@ def test():
     # This will be replaced with real information in later steps.
     times_all = [1,3,4,5]
 
-    return render_template('test.html', times=times_all)
+    return render_template('test.html', times=times_all, username=username, password=password)
 
 
 
