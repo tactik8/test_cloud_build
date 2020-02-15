@@ -19,7 +19,7 @@ def get_links(url):
     payload={}
     emptyValue = []
     payload['url'] = url
-    r = requests(webpage, json=payload)
+    r = requests(url, json=payload)
     links = json.loads(r)
     return links
 
