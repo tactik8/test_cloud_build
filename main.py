@@ -1,6 +1,8 @@
 import datetime
 
 from flask import Flask, render_template
+from flask import request
+
 
 app = Flask(__name__)
 
@@ -8,6 +10,8 @@ app = Flask(__name__)
 
 @app.route('/test/')
 def test():
+    username = request.args.get('username')
+    password = request.args.get('password')
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
     times_all = [1,3,4,5]
