@@ -34,10 +34,10 @@ def scrape():
     if url is None:
         url = 'https://www.synoptek.com'
 
-    to_scrape.append(url)
-
     scrapped = []
     to_scrape = []
+
+    to_scrape.append(url)
 
     while len(to_scrape):
         urls = get_links(to_scrape[0])
