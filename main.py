@@ -32,7 +32,7 @@ def scrape():
     url = website
 
     if url is None:
-        url = 'https://breakingmuscle.com/fitness/write-your-training-programs-like-a-book'
+        url = 'https://www.synoptek.com'
 
     to_scrape.append(url)
 
