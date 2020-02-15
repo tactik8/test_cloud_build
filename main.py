@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 
 
-def get_links(webpage):
+def get_links(url):
     krakenurl = 'https://us-central1-kraken-v1.cloudfunctions.net/krakenScrapeWebpage'
     payload={}
     emptyValue = []
