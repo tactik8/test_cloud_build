@@ -6,6 +6,48 @@ from flask import request
 
 app = Flask(__name__)
 
+import json
+import datetime
+from flask import jsonify
+    
+from urllib.parse import urlparse
+
+
+
+def get_links(webpage):
+    krakenurl = 'https://us-central1-kraken-v1.cloudfunctions.net/krakenScrapeWebpage'
+    payload={}
+    emptyValue = []
+    payload['url'] = url
+    r = requests(webpage, json=payload)
+    links = json.loads(r)
+    return links
+
+
+@app.route('/scrape/')
+def scrape():
+    website = request.args.get('website')
+    import time
+
+    url = website
+
+    if url is None:
+        url = 'https://breakingmuscle.com/fitness/write-your-training-programs-like-a-book'
+
+    to_scrape.append(url)
+
+    scrapped = []
+    to_scrape = []
+
+    while len(to_scrape):
+        urls = get_links(to_scrape[0])
+        for url in urls:
+            if url not in to_scrape:
+                if url not in scrapped:
+                    to_scrape.append(url)
+        scrapped.append(to_scrape[0])
+        to_scrape.pop(0)
+
 
 
 @app.route('/test/')
