@@ -10,9 +10,9 @@ app = Flask(__name__)
 def test():
     # For the sake of example, use static information to inflate the template.
     # This will be replaced with real information in later steps.
-    times = [1,3,4,5]
+    times_all = [1,3,4,5]
 
-    return render_template('test.html', times=dummy_times)
+    return render_template('test.html', times=times_all)
 
 
 
