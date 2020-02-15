@@ -19,7 +19,7 @@ def get_links(url):
     payload={}
     emptyValue = []
     payload['url'] = url
-    r = requests(url, json=payload)
+    r = requests.post(url=krakenurl, json=payload)
     links = json.loads(r)
     return links
 
